@@ -1,0 +1,20 @@
+WEEK 7 ERROR LOG
+=================
+
+Issue 1: Invalid booking date accepted
+Observed: End date earlier than start date was accepted.
+Root cause: Booking validation checked for missing dates but not date order.
+Fix: Added date-order validation before booking creation.
+Status: Resolved.
+
+Issue 2: Invalid payment amount
+Observed: Zero/negative amount reached payment processing.
+Root cause: Missing positive-value validation.
+Fix: Added amount > 0 validation.
+Status: Resolved.
+
+Issue 3: Vehicle API test dependency
+Observed: Integration test cannot run until the project's actual Flask app module is connected.
+Root cause: Project-specific application module/route names are unknown in this generic test package.
+Fix: Added a skip condition and clear adaptation instruction.
+Status: Requires project integration.
